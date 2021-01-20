@@ -1,26 +1,31 @@
 import React, {useState} from 'react';
 
 function SpotifyLogged(props) {
-    const [nowPlaying, setNowPlaying] = useState({name: 'Not Checked', image: ''});
+    const [albums, setAlbums] = useState([]);
 
     function Playing() { 
-        props.spotifyWebAPI.getMyCurrentPlaybackState()
+        props.spotifyWebAPI.getMySavedAlbums()
         .then(res => {
           if(res) {
-            setNowPlaying({name:res.item.name, image: res.item.album.images[0].url})
+            const temp = res.items
+            setAlbums(temp)
           } else {
-            setNowPlaying({name:'Nothing Is Playing', image: ''})
+            console.log('Error');
           }
         })
     }
 
     return (
         <div>
-          <div>Now Playing: {nowPlaying.name}</div>
-          <div>
-            <img src={nowPlaying.image} style={{width:100}}/>
-          </div>
-          <button onClick = {Playing}>Check Now Playing</button>
+        {albums.map(album => {
+          return (
+            <div key={album.added_at}>
+              <h1>{album.album.name}</h1>
+              <img src={album.album.images[0].url} style={{width:100}}/>
+            </div>
+          )
+        })}
+        <button onClick={Playing}>Click</button>
        </div>
        )
 
