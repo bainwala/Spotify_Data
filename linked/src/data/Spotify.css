@@ -1,4 +1,4 @@
-div {
+.main {
     background-color: rgb(59, 36, 7);
     height: 100%;
     width: 100%;
@@ -7,7 +7,7 @@ div {
     margin: 0;
 }
 
-button {
+.btn {
     position: relative;
     top: 50%;
     left: 50%;

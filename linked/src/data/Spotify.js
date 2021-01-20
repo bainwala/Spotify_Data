@@ -4,9 +4,9 @@ const https = require('https');
 
 function Spotify () {
     return (
-        <div>
+        <div className="main">
             <a href="http://localhost:8888">
-                <button>Log In Spotify</button>
+                <button className="btn">Log In Spotify</button>
             </a>
         </div>
     )
