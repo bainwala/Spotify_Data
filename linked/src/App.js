@@ -4,6 +4,7 @@ import Spottify from './data/Spotify';
 import SpotifyLogged from './data/SpotifyLogged';
 import React from 'react';
 import Spotify from 'spotify-web-api-js';
+import Frame from './canva/frame';
 
 function App() {
 

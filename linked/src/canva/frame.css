@@ -1,3 +1,9 @@
-svg {
-    background-color: blanchedalmond;
-  }
+
+body {
+  background-color: rgb(111, 223, 111);
+}
+
+
+.link {
+  stroke: brown;
+}

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
+import Frame from '../canva/frame';
 
-function SpotifyLogged(props) {
+export default function SpotifyLogged(props) {
     const [albums, setAlbums] = useState([]);
 
     function Playing() { 
@@ -16,19 +17,19 @@ function SpotifyLogged(props) {
     }
 
     return (
-        <div>
-        {albums.map(album => {
-          return (
-            <div key={album.added_at}>
-              <h1>{album.album.name}</h1>
-              <img src={album.album.images[0].url} style={{width:100}}/>
-            </div>
-          )
-        })}
-        <button onClick={Playing}>Click</button>
-       </div>
+      <Frame/>
+      //   <div>
+      //   {albums.map(album => {
+      //     return (
+      //       <div key={album.added_at}>
+      //         <h1>{album.album.name}</h1>
+      //         <img src={album.album.images[0].url} style={{width:100}}/>
+      //       </div>
+      //     )
+      //   })}
+      //   <button onClick={Playing}>Click</button>
+      //  </div>
        )
 
 }
 
-export default SpotifyLogged;
